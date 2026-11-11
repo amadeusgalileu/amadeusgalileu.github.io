@@ -24,3 +24,18 @@ let hasMusic=false;
 fetch('music.mp3',{method:'HEAD'}).then(r=>{if(r.ok){music.src='music.mp3';hasMusic=true}}).catch(()=>{});
 sound.addEventListener('click',async()=>{if(!music.paused){music.pause();label.textContent='OFF';return}if(!hasMusic){musicDialog.showModal();return}try{await music.play();label.textContent='ON'}catch(e){musicDialog.showModal()}});
 if(new URLSearchParams(location.search).get('view')==='overview')switchView('overview');
+const backButton = document.createElement('button');
+backButton.textContent = '← BACK TO OVERVIEW';
+backButton.type = 'button';
+
+backButton.style.cssText = 'position:fixed;bottom:20px;left:20px;z-index:9999;background:white;border:1px solid #ccc;padding:12px 16px;font-size:11px;letter-spacing:1px;cursor:pointer;';
+
+backButton.addEventListener('click', () => {
+  switchView('overview');backButton.style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+editorial.appendChild(backButton);
+backButton.style.display = 'none';
+editorialTab.addEventListener('click', () => backButton.style.display = 'block');
+overviewTab.addEventListener('click', () => backButton.style.display = 'none');
