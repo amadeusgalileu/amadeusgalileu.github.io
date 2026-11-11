@@ -4,7 +4,7 @@ const COUNT = 132;
 const editorial = document.getElementById('editorial');
 const overview = document.getElementById('overview');
 const overviewGrid = document.createElement('div');overviewGrid.className='overview-grid';overview.append(overviewGrid);
-function path(n){return 'page-${String(n).padStart(3,'0')}.jpg`}
+function path(n){return `page-${String(n).padStart(3,"0")}.jpg`}
 for(let i=1;i<=COUNT;i+=2){
   const spread=document.createElement('section');spread.className='spread';
   for(let n=i;n<=Math.min(i+1,COUNT);n++){
