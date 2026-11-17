@@ -15,13 +15,20 @@
     <nav aria-label="View modes">
       <button class="tab active" id="editorialTab" type="button" aria-selected="true">EDITORIAL</button>
       <button class="tab" id="overviewTab" type="button" aria-selected="false">OVERVIEW</button>
+      <button class="tab" id="showsTab" type="button" aria-selected="false">SHOWS</button>
     </nav>
   </header>
   <main id="top">
     <div id="editorial" class="view" aria-label="Editorial portfolio"></div>
     <div id="overview" class="view" hidden aria-label="Overview of all pages"></div>
+    <section id="shows" class="view" hidden aria-label="Fashion shows">
+      
+      <section class="show-section"><div class="shows-player"><button type="button" id="carmenPlay" aria-label="Play Carmen">PLAY</button><span>GEORGES BIZET — CARMEN</span><audio id="carmenAudio" preload="none" loop src="TOCA_2020_Carmen_3_camadas.mp3"></audio></div><div class="shows-grid" id="show2020"></div><div class="shows-video" id="video2020"></div></section>
+      <section class="show-section"><div class="shows-grid" id="show2025"></div><div class="shows-video" id="video2025"></div></section>
+    </section>
   </main>
   <footer>TOCA <span>AMADEUS GALILEU</span></footer>
   <script src="script.js?v=20261111b"></script>
+  <script src="shows.js?v=20261117b"></script>
 </body>
 </html>
